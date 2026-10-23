@@ -1,0 +1,23 @@
+{
+  "name": "poll-voting-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express JavaScript API for Poll Voting App",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ext js --exec node src/server.js",
+    "build": "node --check src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

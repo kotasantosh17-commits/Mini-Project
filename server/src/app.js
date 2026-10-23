@@ -9,7 +9,13 @@ const cors_1 = __importDefault(require("cors"));
 const pollRoutes_1 = __importDefault(require("./routes/pollRoutes"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+const cors = require("cors");
+
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN
+}));
+
+app.use(express.json());
 app.use(express_1.default.json({ limit: '100kb' }));
 app.get('/api/health', (_req, res) => res.json({ status: 'ok', message: 'Poll Voting API is running.' }));
 app.use('/api/auth', authRoutes_1.default);
